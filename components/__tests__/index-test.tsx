@@ -2,6 +2,8 @@ import * as React from "react";
 import { fireEvent, render, screen } from "@testing-library/react-native";
 import { Alert } from "react-native";
 import Index from "../../app/regisster";
+import Register from "@/app/register";
+import { useRouter } from "expo-router";
 
 //Mock the Alert module
 jest.mock("react-native/Libraries/Alert/Alert", () => ({
@@ -81,3 +83,4 @@ it("submits the form", () => {
   fireEvent.press(button);
   expect(Alert.alert).toHaveBeenCalledWith("Éxito", "Login correcto");
 });
+
