@@ -11,7 +11,7 @@ export default function ArtistList({artist}: {artist: Artist[]}) {
     
     const handlePress = (artist: any) => router.push({
         pathname:"/ArtistDetailView",
-        params:{id:artist.id, name: artist.name, image: artist.image}
+        params: artist
     })
 
   return (
@@ -24,7 +24,6 @@ export default function ArtistList({artist}: {artist: Artist[]}) {
         onPress={() => handlePress(item)}>
             <ArtistBox artist={item}/>
         </TouchableOpacity>}
-        
         />
     </View>
   )

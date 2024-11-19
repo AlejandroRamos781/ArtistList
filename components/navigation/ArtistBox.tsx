@@ -1,9 +1,9 @@
 import { Artist } from '@/types/artist';
 import React from 'react'
-import {View,Image,Text } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import styled from 'styled-components'
 
-export default function ArtistBox({artist}:{artist:Artist}) {
+export default function ArtistBox({ artist }: { artist: Artist }) {
 
     const MainContainer = styled(View)`
     margin: 5px;
@@ -16,7 +16,7 @@ export default function ArtistBox({artist}:{artist:Artist}) {
 
     const ImageContainer = styled(Image)`
     width: 150px;
-     height: 150px;
+    height: 150px;
     resize-mode:contain;`
 
     const Info = styled(View)`
@@ -27,15 +27,15 @@ export default function ArtistBox({artist}:{artist:Artist}) {
 
     const Name = styled(Text)`
     font-size: 20px; 
-    margin - top:10px; 
+    margin-top:10px; 
     color: #333;`
+    console.log(artist.image)
     return (
         <MainContainer>
-            <ImageContainer source={{uri:artist.image}} testID='artist-image' >
-                <Info>
-                    <Name></Name>
-                </Info>
-            </ImageContainer>
+            <ImageContainer source={{ uri: artist.image }} testID='artist-image' />
+            <Info>
+                <Name>{artist.name}</Name>
+            </Info>
         </MainContainer>
     )
 }

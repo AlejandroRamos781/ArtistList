@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import { useRouter } from "expo-router";
+import Home from "./home";
 
 export default function Index() {
   const [email, setEmail] = useState<string>("");
@@ -69,42 +70,7 @@ export default function Index() {
   `;
 
   return (
-    <View>
-      <Image
-        source={{
-          uri: "https://media.licdn.com/dms/image/v2/D4E0BAQErsDgSuIWN4w/company-logo_200_200/company-logo_200_200/0/1681406186808?e=2147483647&v=beta&t=HB9Sc1kW9HaXrVpKIgMhU4kdasYTiKFbuLybGSNK-Oc",
-        }}
-        style={styles.image}
-      />
-
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
-
-      <TextInput
-        style={styles.input}
-        placeholder="Contraseña"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry={true}
-      />
-
-      <MainContainer>
-        <Button
-          onPress={onPressLearnMore}
-          title="Register"
-          color="#841584"
-          accessibilityLabel="Register button"
-        />
-      </MainContainer>
-
-      <Button title="Validar" onPress={handleSubmit} />
-    </View>
+    <Home/>
   );
 }
 

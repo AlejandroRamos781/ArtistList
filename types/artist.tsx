@@ -8,7 +8,7 @@ export interface ArtistResource{
     name: string,
     mbid: string,
     image:[
-        ImageUrl:any
+        ImageUrl:ImageUrl
     ]
 }
 interface ImageUrl {
